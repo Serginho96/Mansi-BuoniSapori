@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BUONI SAPORI DI MANSI G. & FIGLI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        /* Layout con menu a sinistra e contenuto a destra */
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        /* Menu prodotti a sinistra */
+        .product-menu {
+            background-color: #2c3e50;
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            width: 250px;
+        }
+
+        .product-menu h2 {
+            text-align: center;
+            margin-bottom: 10px;
+        }
+
+        .product-menu ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-menu ul li {
+            background: white;
+            color: #2c3e50;
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, color 0.3s;
+            text-align: center;
+        }
+
+        .product-menu ul li:hover {
+            background: #34495e;
+            color: white;
+        }
+
+        /* Dettagli prodotto a destra */
+        .product-display {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            margin-left: 20px;
+            text-align: left;
+        }
+
+        .product-display img {
+            width: 100%;
+            max-width: 300px;
+            border-radius: 8px;
+            margin-top: 10px;
+            display: block;
+        }
+
+        .product-info {
+            margin-top: 15px;
+        }
+
+        .product-info p {
+            margin: 5px 0;
+        }
+
+        .price {
+            font-size: 20px;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>BUONI SAPORI DI MANSI G. & FIGLI</h1>
+
+    <div class="container">
+        <!-- Menu Prodotti a sinistra -->
+        <div class="product-menu">
+            <h2>I Nostri Prodotti</h2>
+            <ul>
+                <li onclick="showProduct('Mozzarella', 'mozzarella.jpg', '8.99', 'Mozzarella fresca di latte vaccino, perfetta per caprese e pizza.', 'Latte, sale, caglio')">Mozzarella</li>
+                <li onclick="showProduct('Provolone', 'provolone.jpg', '12.50', 'Formaggio stagionato dal gusto deciso, ideale per panini e antipasti.', 'Latte, sale, caglio, fermenti lattici')">Provolone</li>
+                <li onclick="showProduct('Salame', 'salame.jpg', '18.00', 'Salame artigianale con una stagionatura perfetta.', 'Carne di suino, sale, pepe, spezie')">Salame</li>
+                <li onclick="showProduct('Olio d\'oliva', 'olio.jpg', '15.00', 'Olio extravergine di oliva 100% italiano, spremuto a freddo.', 'Olive selezionate')">Olio d'oliva</li>
+                <li onclick="showProduct('Pane casereccio', 'pane.jpg', '5.00', 'Pane fatto in casa con lievitazione naturale.', 'Farina, acqua, sale, lievito')">Pane casereccio</li>
+            </ul>
+        </div>
+
+        <!-- Area Dettagli Prodotto a destra -->
+        <div class="product-display">
+            <p>Seleziona un prodotto dal menu per vedere i dettagli.</p>
+        </div>
+    </div>
+
+    <script>
+        function showProduct(name, image, price, description, ingredients) {
+            let display = document.querySelector(".product-display");
+            display.innerHTML = `
+                <h2>${name}</h2>
+                <img src="${image}" alt="${name}">
+                <div class="product-info">
+                    <p class="price">Prezzo: €${price} al Kg</p>
+                    <p><strong>Descrizione:</strong> ${description}</p>
+                    <p><strong>Ingredienti:</strong> ${ingredients}</p>
+                </div>
+            `;
+        }
+    </script>
+
+</body>
+</html>
